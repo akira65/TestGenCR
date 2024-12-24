@@ -1,0 +1,41 @@
+src/main/java/
+└─ org.example.testgen_cr/
+   ├─ main/
+   │   └─ TestGen.java
+   ├─ config/
+   │   └─ ProjectConfig.java (など)
+   ├─ model/
+   │   ├─ TestGenMethod.java
+   │   ├─ TestGenMethodSeq.java
+   │   ├─ TestGenVariable.java
+   │   ├─ TestTarget.java
+   │   └─ VariableFinder.java (model内解析はここ)
+   ├─ searcher/
+   │   ├─ MethodAnalyzer.java
+   │   ├─ MethodRelationshipAnalyzer.java
+   │   └─ SearchResultsChecker.java
+   ├─ filter/
+   │   └─ MethodPairFilter.java (条件フィルタ実装クラス)
+   ├─ generator/
+   │   ├─ TestGenerator.java
+   │   └─ EvosuiteRunner.java
+   ├─ instrumentation/
+   │   └─ BytecodeInstrumenter.java
+   ├─ runner/
+   │   ├─ Compiler.java
+   │   ├─ TestRunner.java
+   │   ├─ TestGenTestRunner.java
+   │   └─ TestGenClassLoader.java
+   ├─ results/
+   │   ├─ GenClass.java
+   │   ├─ ResultMethod.java
+   │   ├─ ResultMethodSeq.java
+   │   └─ ResultVariable.java
+   ├─ utils/
+   │   └─ FileUtils.java
+   └─ exception/
+       ├─ TestGenException.java
+       ├─ CompilationException.java
+       └─ TestExecutionException.java
+
+解析 → 絞り込み → テスト生成 → バイナリ改変 → テスト実行 → ログ取得 → テストケース生成
