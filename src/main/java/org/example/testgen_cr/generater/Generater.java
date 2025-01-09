@@ -64,10 +64,11 @@ public class Generater {
     }
 
     private static void appendMethodInvocation(StringBuilder testCode, TestGenParts testGenParts, VariableInfo returnInfo) {
+        String classQualifiedName = testGenParts.getTestGenMethod().getClassQualifiedName();
         String methodName = testGenParts.getMethodName();
         String returnType = returnInfo.getType();
 
-        testCode.append("        ").append(testGenParts.get)
+        testCode.append("        ").append(classQualifiedName).append(" ").append("target = new ").append(classQualifiedName);
         testCode.append("        ")
                 .append(returnType).append(" result = ")
                 .append(methodName).append("(");
